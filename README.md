@@ -104,4 +104,16 @@ print(response.songs)
 print(response.playlists)
 ```
 
+## Ratings 
+
+To add ratings to a music item, use the following structure: 
+
+```swift 
+let id: MusicItemID = "1628890886"
+let request = MusicCatalogRatingAddRequest<Song>(matching: \.id, equalTo: id, rating: .loved)
+let response = try await request.response()
+
+print(response.items)
+```
+
 I hope you love working with MusadoraKit! 
